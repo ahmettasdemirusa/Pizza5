@@ -250,7 +250,7 @@ async def get_menu_items():
 async def get_categories():
     return {
         "pizza_categories": ["classic", "specialty"],
-        "other_categories": ["pasta", "calzone", "stromboli", "appetizers", "salads", "desserts", "wings"]
+        "other_categories": ["pasta", "calzone", "stromboli", "appetizers", "salads", "desserts", "wings", "burgers", "hot_subs", "cold_subs", "gyros", "sides", "beverages", "slice"]
     }
 
 # ==================== ORDER ROUTES ====================
