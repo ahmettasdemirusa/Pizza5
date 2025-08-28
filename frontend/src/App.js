@@ -702,6 +702,34 @@ function Menu() {
             title="Delicious Calzones"
           />
         )}
+        
+        {activeCategory === 'stromboli' && (
+          <MenuSection 
+            items={menuItems.filter(item => item.category === 'stromboli')} 
+            title="Delicious Stromboli"
+          />
+        )}
+        
+        {activeCategory === 'appetizers' && (
+          <MenuSection 
+            items={menuItems.filter(item => item.category === 'appetizers')} 
+            title="Appetizers"
+          />
+        )}
+        
+        {activeCategory === 'salads' && (
+          <MenuSection 
+            items={menuItems.filter(item => item.category === 'salads')} 
+            title="Fresh Salads"
+          />
+        )}
+        
+        {activeCategory === 'wings' && (
+          <MenuSection 
+            items={menuItems.filter(item => item.category === 'wings')} 
+            title="Wings"
+          />
+        )}
       </div>
 
       {/* Pizza Detail Modal */}
