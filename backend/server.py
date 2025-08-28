@@ -1066,7 +1066,7 @@ async def initialize_sample_data():
             "is_available": True
         },
         
-        # HOT SUBS
+        # HOT SUBS (8 items total)
         {
             "id": str(uuid.uuid4()),
             "name": "Chicken Parmigiana Sub",
@@ -1103,8 +1103,44 @@ async def initialize_sample_data():
             "image_url": "https://www.nypizzawoodstock.com/wp-content/uploads/2019/11/Steak_and_Cheese-scaled-1-600x338.jpg",
             "is_available": True
         },
+        {
+            "id": str(uuid.uuid4()),
+            "name": "Chicken Cheese Steak",
+            "description": "Grilled chicken with peppers, onions and cheese",
+            "category": "hot_subs",
+            "price": 12.95,
+            "image_url": "https://www.nypizzawoodstock.com/wp-content/uploads/2023/07/Italian_Chicken-scaled-1-600x338.jpg",
+            "is_available": True
+        },
+        {
+            "id": str(uuid.uuid4()),
+            "name": "Eggplant Parmigiana Sub",
+            "description": "Breaded eggplant with marinara and cheese",
+            "category": "hot_subs",
+            "price": 11.95,
+            "image_url": "https://www.nypizzawoodstock.com/wp-content/uploads/2023/07/eGGPLANT-PARMIGIANA-600x400.jpg",
+            "is_available": True
+        },
+        {
+            "id": str(uuid.uuid4()),
+            "name": "Sausage & Peppers Sub",
+            "description": "Italian sausage with bell peppers",
+            "category": "hot_subs",
+            "price": 12.50,
+            "image_url": "https://www.nypizzawoodstock.com/wp-content/uploads/2023/07/Stromboli-2-scaled-1-600x338.jpg",
+            "is_available": True
+        },
+        {
+            "id": str(uuid.uuid4()),
+            "name": "Buffalo Chicken Sub",
+            "description": "Buffalo chicken with ranch and lettuce",
+            "category": "hot_subs",
+            "price": 12.95,
+            "image_url": "https://www.nypizzawoodstock.com/wp-content/uploads/2019/11/Buffalo_Pizza-scaled-2-600x338.jpg",
+            "is_available": True
+        },
 
-        # COLD SUBS
+        # COLD SUBS (8 items total)
         {
             "id": str(uuid.uuid4()),
             "name": "Italian Sub",
@@ -1132,8 +1168,53 @@ async def initialize_sample_data():
             "image_url": "https://www.nypizzawoodstock.com/wp-content/uploads/2023/07/Hot-Sub-Sandwiches-3-pmg-cs-150x150.png",
             "is_available": True
         },
+        {
+            "id": str(uuid.uuid4()),
+            "name": "Tuna Sub",
+            "description": "Tuna salad with lettuce and tomato",
+            "category": "cold_subs",
+            "price": 10.95,
+            "image_url": "https://www.nypizzawoodstock.com/wp-content/uploads/2023/07/Hot-Sub-Sandwiches-3-pmg-cs-150x150.png",
+            "is_available": True
+        },
+        {
+            "id": str(uuid.uuid4()),
+            "name": "Roast Beef Sub",
+            "description": "Sliced roast beef with cheese",
+            "category": "cold_subs",
+            "price": 11.95,
+            "image_url": "https://www.nypizzawoodstock.com/wp-content/uploads/2023/07/Hot-Sub-Sandwiches-3-pmg-cs-150x150.png",
+            "is_available": True
+        },
+        {
+            "id": str(uuid.uuid4()),
+            "name": "Veggie Sub",
+            "description": "Fresh vegetables with cheese",
+            "category": "cold_subs",
+            "price": 9.95,
+            "image_url": "https://www.nypizzawoodstock.com/wp-content/uploads/2023/07/Hot-Sub-Sandwiches-3-pmg-cs-150x150.png",
+            "is_available": True
+        },
+        {
+            "id": str(uuid.uuid4()),
+            "name": "Club Sub",
+            "description": "Turkey, ham, bacon with cheese",
+            "category": "cold_subs",
+            "price": 12.95,
+            "image_url": "https://www.nypizzawoodstock.com/wp-content/uploads/2023/07/Hot-Sub-Sandwiches-3-pmg-cs-150x150.png",
+            "is_available": True
+        },
+        {
+            "id": str(uuid.uuid4()),
+            "name": "Chicken Salad Sub",
+            "description": "Homemade chicken salad with lettuce",
+            "category": "cold_subs",
+            "price": 11.50,
+            "image_url": "https://www.nypizzawoodstock.com/wp-content/uploads/2023/07/Hot-Sub-Sandwiches-3-pmg-cs-150x150.png",
+            "is_available": True
+        },
 
-        # GYROS
+        # GYROS (6 items total)
         {
             "id": str(uuid.uuid4()),
             "name": "Gyro Platter",
@@ -1152,8 +1233,44 @@ async def initialize_sample_data():
             "image_url": "https://www.nypizzawoodstock.com/wp-content/uploads/2023/07/gyross-150x150.png",
             "is_available": True
         },
+        {
+            "id": str(uuid.uuid4()),
+            "name": "Gyro Sandwich",
+            "description": "Traditional gyro meat in pita bread",
+            "category": "gyros",
+            "price": 9.95,
+            "image_url": "https://www.nypizzawoodstock.com/wp-content/uploads/2023/07/gyross-150x150.png",
+            "is_available": True
+        },
+        {
+            "id": str(uuid.uuid4()),
+            "name": "Chicken Gyro Sandwich",
+            "description": "Grilled chicken in pita with tzatziki",
+            "category": "gyros",
+            "price": 9.50,
+            "image_url": "https://www.nypizzawoodstock.com/wp-content/uploads/2023/07/gyross-150x150.png",
+            "is_available": True
+        },
+        {
+            "id": str(uuid.uuid4()),
+            "name": "Lamb Gyro",
+            "description": "Seasoned lamb with vegetables and tzatziki",
+            "category": "gyros",
+            "price": 11.95,
+            "image_url": "https://www.nypizzawoodstock.com/wp-content/uploads/2023/07/gyross-150x150.png",
+            "is_available": True
+        },
+        {
+            "id": str(uuid.uuid4()),
+            "name": "Gyro Combo",
+            "description": "Gyro sandwich with fries and drink",
+            "category": "gyros",
+            "price": 14.95,
+            "image_url": "https://www.nypizzawoodstock.com/wp-content/uploads/2023/07/gyross-150x150.png",
+            "is_available": True
+        },
 
-        # SIDES
+        # SIDES (10 items total)
         {
             "id": str(uuid.uuid4()),
             "name": "French Fries",
@@ -1181,8 +1298,71 @@ async def initialize_sample_data():
             "image_url": "https://www.nypizzawoodstock.com/wp-content/uploads/2023/07/Bread-Sticks-600x400-1-300x300.jpg",
             "is_available": True
         },
+        {
+            "id": str(uuid.uuid4()),
+            "name": "Garlic Knots",
+            "description": "Fresh baked garlic knots",
+            "category": "sides",
+            "price": 4.50,
+            "image_url": "https://www.nypizzawoodstock.com/wp-content/uploads/2023/07/Bread-Sticks-600x400-1-300x300.jpg",
+            "is_available": True
+        },
+        {
+            "id": str(uuid.uuid4()),
+            "name": "Marinara Sauce",
+            "description": "Side of marinara dipping sauce",
+            "category": "sides",
+            "price": 1.50,
+            "image_url": "https://www.nypizzawoodstock.com/wp-content/uploads/2023/07/sides-png-3-150x150.png",
+            "is_available": True
+        },
+        {
+            "id": str(uuid.uuid4()),
+            "name": "Ranch Dressing",
+            "description": "Side of ranch dressing",
+            "category": "sides",
+            "price": 1.50,
+            "image_url": "https://www.nypizzawoodstock.com/wp-content/uploads/2023/07/sides-png-3-150x150.png",
+            "is_available": True
+        },
+        {
+            "id": str(uuid.uuid4()),
+            "name": "Blue Cheese",
+            "description": "Side of blue cheese dressing",
+            "category": "sides",
+            "price": 1.50,
+            "image_url": "https://www.nypizzawoodstock.com/wp-content/uploads/2023/07/sides-png-3-150x150.png",
+            "is_available": True
+        },
+        {
+            "id": str(uuid.uuid4()),
+            "name": "Sweet Potato Fries",
+            "description": "Crispy sweet potato fries",
+            "category": "sides",
+            "price": 6.50,
+            "image_url": "https://www.nypizzawoodstock.com/wp-content/uploads/2023/07/sides-png-3-150x150.png",
+            "is_available": True
+        },
+        {
+            "id": str(uuid.uuid4()),
+            "name": "Side Salad",
+            "description": "Small mixed green salad",
+            "category": "sides",
+            "price": 4.95,
+            "image_url": "https://www.nypizzawoodstock.com/wp-content/uploads/2023/07/Garden_Salad-2048x1152-1-300x300.jpg",
+            "is_available": True
+        },
+        {
+            "id": str(uuid.uuid4()),
+            "name": "Caesar Side Salad",
+            "description": "Small Caesar salad",
+            "category": "sides",
+            "price": 5.50,
+            "image_url": "https://www.nypizzawoodstock.com/wp-content/uploads/2023/07/Garden_Salad-2048x1152-1-300x300.jpg",
+            "is_available": True
+        },
 
-        # BEVERAGES
+        # BEVERAGES (12 items total)
         {
             "id": str(uuid.uuid4()),
             "name": "Coca Cola",
@@ -1203,6 +1383,42 @@ async def initialize_sample_data():
         },
         {
             "id": str(uuid.uuid4()),
+            "name": "Sprite",
+            "description": "Lemon-lime soda",
+            "category": "beverages",
+            "price": 2.95,
+            "image_url": "https://via.placeholder.com/300x300/dc2626/white?text=Beverages",
+            "is_available": True
+        },
+        {
+            "id": str(uuid.uuid4()),
+            "name": "Orange Soda",
+            "description": "Orange flavored soda",
+            "category": "beverages",
+            "price": 2.95,
+            "image_url": "https://via.placeholder.com/300x300/dc2626/white?text=Beverages",
+            "is_available": True
+        },
+        {
+            "id": str(uuid.uuid4()),
+            "name": "Dr Pepper",
+            "description": "Classic Dr Pepper soda",
+            "category": "beverages",
+            "price": 2.95,
+            "image_url": "https://via.placeholder.com/300x300/dc2626/white?text=Beverages",
+            "is_available": True
+        },
+        {
+            "id": str(uuid.uuid4()),
+            "name": "Diet Coke",
+            "description": "Diet Coca Cola",
+            "category": "beverages",
+            "price": 2.95,
+            "image_url": "https://via.placeholder.com/300x300/dc2626/white?text=Beverages",
+            "is_available": True
+        },
+        {
+            "id": str(uuid.uuid4()),
             "name": "Water Bottle",
             "description": "Bottled water",
             "category": "beverages",
@@ -1210,8 +1426,53 @@ async def initialize_sample_data():
             "image_url": "https://via.placeholder.com/300x300/dc2626/white?text=Beverages",
             "is_available": True
         },
+        {
+            "id": str(uuid.uuid4()),
+            "name": "Iced Tea",
+            "description": "Fresh brewed iced tea",
+            "category": "beverages",
+            "price": 2.50,
+            "image_url": "https://via.placeholder.com/300x300/dc2626/white?text=Beverages",
+            "is_available": True
+        },
+        {
+            "id": str(uuid.uuid4()),
+            "name": "Lemonade",
+            "description": "Fresh squeezed lemonade",
+            "category": "beverages",
+            "price": 2.95,
+            "image_url": "https://via.placeholder.com/300x300/dc2626/white?text=Beverages",
+            "is_available": True
+        },
+        {
+            "id": str(uuid.uuid4()),
+            "name": "Coffee",
+            "description": "Hot brewed coffee",
+            "category": "beverages",
+            "price": 2.25,
+            "image_url": "https://via.placeholder.com/300x300/dc2626/white?text=Beverages",
+            "is_available": True
+        },
+        {
+            "id": str(uuid.uuid4()),
+            "name": "Hot Tea",
+            "description": "Hot herbal tea selection",
+            "category": "beverages",
+            "price": 2.25,
+            "image_url": "https://via.placeholder.com/300x300/dc2626/white?text=Beverages",
+            "is_available": True
+        },
+        {
+            "id": str(uuid.uuid4()),
+            "name": "Apple Juice",
+            "description": "Fresh apple juice",
+            "category": "beverages",
+            "price": 2.75,
+            "image_url": "https://via.placeholder.com/300x300/dc2626/white?text=Beverages",
+            "is_available": True
+        },
 
-        # DESSERTS
+        # DESSERTS (8 items total)
         {
             "id": str(uuid.uuid4()),
             "name": "Tiramisu",
@@ -1239,8 +1500,53 @@ async def initialize_sample_data():
             "image_url": "https://www.nypizzawoodstock.com/wp-content/uploads/2023/07/dessert-png-1-150x150.png",
             "is_available": True
         },
+        {
+            "id": str(uuid.uuid4()),
+            "name": "Chocolate Cake",
+            "description": "Rich chocolate layer cake",
+            "category": "desserts",
+            "price": 5.50,
+            "image_url": "https://www.nypizzawoodstock.com/wp-content/uploads/2023/07/dessert-png-1-150x150.png",
+            "is_available": True
+        },
+        {
+            "id": str(uuid.uuid4()),
+            "name": "Gelato",
+            "description": "Italian gelato - vanilla or chocolate",
+            "category": "desserts",
+            "price": 4.50,
+            "image_url": "https://www.nypizzawoodstock.com/wp-content/uploads/2023/07/dessert-png-1-150x150.png",
+            "is_available": True
+        },
+        {
+            "id": str(uuid.uuid4()),
+            "name": "Zeppoli",
+            "description": "Fried Italian doughnuts with powdered sugar",
+            "category": "desserts",
+            "price": 6.50,
+            "image_url": "https://www.nypizzawoodstock.com/wp-content/uploads/2023/07/dessert-png-1-150x150.png",
+            "is_available": True
+        },
+        {
+            "id": str(uuid.uuid4()),
+            "name": "Chocolate Cannoli",
+            "description": "Chocolate dipped cannoli",
+            "category": "desserts",
+            "price": 5.50,
+            "image_url": "https://www.nypizzawoodstock.com/wp-content/uploads/2023/07/dessert-png-1-150x150.png",
+            "is_available": True
+        },
+        {
+            "id": str(uuid.uuid4()),
+            "name": "Spumoni",
+            "description": "Traditional Italian ice cream",
+            "category": "desserts",
+            "price": 4.95,
+            "image_url": "https://www.nypizzawoodstock.com/wp-content/uploads/2023/07/dessert-png-1-150x150.png",
+            "is_available": True
+        },
 
-        # SLICE (Individual pizza slices)
+        # SLICE (6 items total)
         {
             "id": str(uuid.uuid4()),
             "name": "Cheese Slice",
@@ -1265,6 +1571,33 @@ async def initialize_sample_data():
             "description": "Single slice of daily specialty pizza",
             "category": "slice",
             "price": 5.25,
+            "image_url": "https://www.nypizzawoodstock.com/wp-content/uploads/2019/11/Buffalo_Pizza-scaled-2-600x338.jpg",
+            "is_available": True
+        },
+        {
+            "id": str(uuid.uuid4()),
+            "name": "Sicilian Slice",
+            "description": "Thick crust Sicilian pizza slice",
+            "category": "slice",
+            "price": 4.95,
+            "image_url": "https://www.nypizzawoodstock.com/wp-content/uploads/2023/07/Sicilian-1-600x450.jpg",
+            "is_available": True
+        },
+        {
+            "id": str(uuid.uuid4()),
+            "name": "White Slice",
+            "description": "White pizza slice with ricotta",
+            "category": "slice",
+            "price": 4.75,
+            "image_url": "https://www.nypizzawoodstock.com/wp-content/uploads/2023/07/NY_White_Pizza-scaled-1-600x338.jpg",
+            "is_available": True
+        },
+        {
+            "id": str(uuid.uuid4()),
+            "name": "Buffalo Chicken Slice",
+            "description": "Buffalo chicken pizza slice",
+            "category": "slice",
+            "price": 5.50,
             "image_url": "https://www.nypizzawoodstock.com/wp-content/uploads/2019/11/Buffalo_Pizza-scaled-2-600x338.jpg",
             "is_available": True
         }
