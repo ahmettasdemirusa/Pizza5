@@ -382,10 +382,11 @@ async def startup_event():
         await initialize_sample_data()
 
 async def initialize_sample_data():
-    """Initialize the database with NY Pizza Woodstock menu data"""
+    """Initialize the database with NY Pizza Woodstock complete menu data"""
     
-    # Sample Pizzas
+    # Complete Pizzas List
     pizzas = [
+        # Classic Pizzas
         {
             "id": str(uuid.uuid4()),
             "name": "NY Cheese Pizza",
@@ -396,6 +397,17 @@ async def initialize_sample_data():
             "toppings": [],
             "is_available": True
         },
+        {
+            "id": str(uuid.uuid4()),
+            "name": "Sicilian Pizza",
+            "description": "Extra Large 18″ thick crust Sicilian style pizza",
+            "category": "classic",
+            "image_url": "https://www.nypizzawoodstock.com/wp-content/uploads/2023/07/Sicilian-1-600x450.jpg",
+            "sizes": {"Extra Large 18\"": 22.95},
+            "toppings": [],
+            "is_available": True
+        },
+        # Specialty Pizzas
         {
             "id": str(uuid.uuid4()),
             "name": "Buffalo Chicken Pizza",
@@ -455,11 +467,112 @@ async def initialize_sample_data():
             "sizes": {"Medium": 20.95, "Large": 22.95, "Xlarge": 24.95},
             "toppings": ["Pepperoni", "Ham", "Bacon"],
             "is_available": True
+        },
+        {
+            "id": str(uuid.uuid4()),
+            "name": "NY White Pizza",
+            "description": "White sauce with ricotta and mozzarella cheese",
+            "category": "specialty",
+            "image_url": "https://www.nypizzawoodstock.com/wp-content/uploads/2023/07/NY_White_Pizza-scaled-1-600x338.jpg",
+            "sizes": {"Medium": 17.95, "Large": 19.95, "Xlarge": 21.95},
+            "toppings": ["Ricotta", "Mozzarella", "White Sauce"],
+            "is_available": True
+        },
+        {
+            "id": str(uuid.uuid4()),
+            "name": "Roma Spinach Pizza",
+            "description": "Fresh spinach with garlic and olive oil",
+            "category": "specialty",
+            "image_url": "https://www.nypizzawoodstock.com/wp-content/uploads/2023/07/Roma_Spinach-scaled-1-600x338.jpg",
+            "sizes": {"Medium": 18.95, "Large": 20.95, "Xlarge": 22.95},
+            "toppings": ["Spinach", "Garlic", "Olive Oil"],
+            "is_available": True
+        },
+        {
+            "id": str(uuid.uuid4()),
+            "name": "Primavera Pizza",
+            "description": "Fresh vegetables with mozzarella cheese",
+            "category": "specialty",
+            "image_url": "https://www.nypizzawoodstock.com/wp-content/uploads/2023/07/Primevera_Pizza-scaled-1.jpg",
+            "sizes": {"Medium": 18.95, "Large": 20.95, "Xlarge": 22.95},
+            "toppings": ["Fresh Vegetables", "Mozzarella"],
+            "is_available": True
+        },
+        {
+            "id": str(uuid.uuid4()),
+            "name": "Italian Chicken Pizza",
+            "description": "Grilled chicken with Italian herbs and spices",
+            "category": "specialty",
+            "image_url": "https://www.nypizzawoodstock.com/wp-content/uploads/2023/07/Italian_Chicken-scaled-1-600x338.jpg",
+            "sizes": {"Medium": 18.95, "Large": 20.95, "Xlarge": 22.95},
+            "toppings": ["Grilled Chicken", "Italian Herbs"],
+            "is_available": True
+        },
+        {
+            "id": str(uuid.uuid4()),
+            "name": "The Greek Pizza",
+            "description": "Feta cheese, olives, tomatoes and oregano",
+            "category": "specialty",
+            "image_url": "https://www.nypizzawoodstock.com/wp-content/uploads/2023/07/Greek_Pizza-scaled-1.jpg",
+            "sizes": {"Medium": 19.95, "Large": 21.95, "Xlarge": 23.95},
+            "toppings": ["Feta Cheese", "Olives", "Tomatoes", "Oregano"],
+            "is_available": True
+        },
+        {
+            "id": str(uuid.uuid4()),
+            "name": "Lasagna Pizza",
+            "description": "Pizza topped like a lasagna with ricotta and meat sauce",
+            "category": "specialty",
+            "image_url": "https://www.nypizzawoodstock.com/wp-content/uploads/2023/07/Lasgna_Pizza-scaled-1-600x338.jpg",
+            "sizes": {"Medium": 19.95, "Large": 21.95, "Xlarge": 23.95},
+            "toppings": ["Ricotta", "Meat Sauce", "Mozzarella"],
+            "is_available": True
+        },
+        {
+            "id": str(uuid.uuid4()),
+            "name": "Eggplant Parmigiana Pizza",
+            "description": "Breaded eggplant with marinara and mozzarella",
+            "category": "specialty",
+            "image_url": "https://www.nypizzawoodstock.com/wp-content/uploads/2023/07/Eggplant_Pizza-2048x1152-1-600x338.jpg",
+            "sizes": {"Medium": 18.95, "Large": 20.95, "Xlarge": 22.95},
+            "toppings": ["Eggplant", "Marinara", "Mozzarella"],
+            "is_available": True
+        },
+        {
+            "id": str(uuid.uuid4()),
+            "name": "Stuffed Meat Pizza",
+            "description": "Double crust pizza stuffed with meat and cheese",
+            "category": "specialty",
+            "image_url": "https://www.nypizzawoodstock.com/wp-content/uploads/2023/07/Stuffed_Meat-scaled-2-600x338.jpg",
+            "sizes": {"Medium": 22.95, "Large": 24.95, "Xlarge": 26.95},
+            "toppings": ["Meat", "Cheese", "Double Crust"],
+            "is_available": True
+        },
+        {
+            "id": str(uuid.uuid4()),
+            "name": "Stuffed Veggie Pizza",
+            "description": "Double crust pizza stuffed with vegetables and cheese",
+            "category": "specialty",
+            "image_url": "https://www.nypizzawoodstock.com/wp-content/uploads/2023/07/Stuffed_Meat-scaled-2-600x338.jpg",
+            "sizes": {"Medium": 21.95, "Large": 23.95, "Xlarge": 25.95},
+            "toppings": ["Vegetables", "Cheese", "Double Crust"],
+            "is_available": True
+        },
+        {
+            "id": str(uuid.uuid4()),
+            "name": "Stuffed Chicken Pizza",
+            "description": "Double crust pizza stuffed with chicken and cheese",
+            "category": "specialty",
+            "image_url": "https://www.nypizzawoodstock.com/wp-content/uploads/2023/07/Stuffed_Meat-scaled-2-600x338.jpg",
+            "sizes": {"Medium": 22.95, "Large": 24.95, "Xlarge": 26.95},
+            "toppings": ["Chicken", "Cheese", "Double Crust"],
+            "is_available": True
         }
     ]
     
-    # Sample Menu Items
+    # Complete Menu Items List
     menu_items = [
+        # PASTA DISHES
         {
             "id": str(uuid.uuid4()),
             "name": "Homemade Meat Lasagna",
@@ -469,6 +582,215 @@ async def initialize_sample_data():
             "image_url": "https://www.nypizzawoodstock.com/wp-content/uploads/2023/07/meat-lasagne.png",
             "is_available": True
         },
+        {
+            "id": str(uuid.uuid4()),
+            "name": "Homemade Veggie Lasagna",
+            "description": "Vegetarian lasagna with fresh vegetables",
+            "category": "pasta",
+            "price": 13.95,
+            "image_url": "https://www.nypizzawoodstock.com/wp-content/uploads/2023/07/veggie-lasagna-600x450.png",
+            "is_available": True
+        },
+        {
+            "id": str(uuid.uuid4()),
+            "name": "Homemade Baked Ziti",
+            "description": "Classic baked ziti with marinara and mozzarella",
+            "category": "pasta",
+            "price": 12.95,
+            "image_url": "https://www.nypizzawoodstock.com/wp-content/uploads/2023/07/baked-ziti-600x450.png",
+            "is_available": True
+        },
+        {
+            "id": str(uuid.uuid4()),
+            "name": "Baked Ziti Sicilian",
+            "description": "Baked ziti Sicilian style with ricotta",
+            "category": "pasta",
+            "price": 12.95,
+            "image_url": "https://www.nypizzawoodstock.com/wp-content/uploads/2023/07/Baked-Ziti-Sicilian-600x450.png",
+            "is_available": True
+        },
+        {
+            "id": str(uuid.uuid4()),
+            "name": "Baked Ziti Anna Maria",
+            "description": "Special baked ziti with meat and ricotta",
+            "category": "pasta",
+            "price": 14.95,
+            "image_url": "https://www.nypizzawoodstock.com/wp-content/uploads/2023/07/Baked-Ziti-Anna-Maria-600x450.png",
+            "is_available": True
+        },
+        {
+            "id": str(uuid.uuid4()),
+            "name": "Baked Ziti Blanco",
+            "description": "White sauce baked ziti with cheese",
+            "category": "pasta",
+            "price": 12.95,
+            "image_url": "https://www.nypizzawoodstock.com/wp-content/uploads/2023/07/Baked-Ziti-Blanco-1-600x450.png",
+            "is_available": True
+        },
+        {
+            "id": str(uuid.uuid4()),
+            "name": "Baked Spaghetti",
+            "description": "Oven-baked spaghetti with cheese",
+            "category": "pasta",
+            "price": 12.95,
+            "image_url": "https://www.nypizzawoodstock.com/wp-content/uploads/2023/07/Baked-Spaghetti-1-600x400.jpg",
+            "is_available": True
+        },
+        {
+            "id": str(uuid.uuid4()),
+            "name": "Spaghetti or Ziti Marinara",
+            "description": "Classic marinara sauce with your choice of pasta",
+            "category": "pasta",
+            "price": 12.95,
+            "image_url": "https://www.nypizzawoodstock.com/wp-content/uploads/2023/07/Spaghetti-or-Ziti-Marinara-1-600x450.png",
+            "is_available": True
+        },
+        {
+            "id": str(uuid.uuid4()),
+            "name": "Spaghetti or Ziti Meat Sauce",
+            "description": "Rich meat sauce with your choice of pasta",
+            "category": "pasta",
+            "price": 14.95,
+            "image_url": "https://www.nypizzawoodstock.com/wp-content/uploads/2023/07/Spaghetti-or-Ziti-Meat-Sauce-1-600x450.png",
+            "is_available": True
+        },
+        {
+            "id": str(uuid.uuid4()),
+            "name": "Spaghetti Meatball or Sausage",
+            "description": "Spaghetti with homemade meatballs or sausage",
+            "category": "pasta",
+            "price": 14.95,
+            "image_url": "https://www.nypizzawoodstock.com/wp-content/uploads/2023/07/spaghetti-meatballs.jpg",
+            "is_available": True
+        },
+        {
+            "id": str(uuid.uuid4()),
+            "name": "Ziti Meatball or Sausage",
+            "description": "Ziti with homemade meatballs or sausage",
+            "category": "pasta",
+            "price": 14.95,
+            "image_url": "https://www.nypizzawoodstock.com/wp-content/uploads/2023/07/Ziti-Meatball-or-Sausage-600x450.png",
+            "is_available": True
+        },
+        {
+            "id": str(uuid.uuid4()),
+            "name": "Chicken Parmigiana Pasta",
+            "description": "Breaded chicken cutlet with pasta",
+            "category": "pasta",
+            "price": 15.95,
+            "image_url": "https://www.nypizzawoodstock.com/wp-content/uploads/2023/07/Chicken-Parmigiana-Pasta-600x450.png",
+            "is_available": True
+        },
+        {
+            "id": str(uuid.uuid4()),
+            "name": "Eggplant Parmigiana Pasta",
+            "description": "Breaded eggplant with marinara and pasta",
+            "category": "pasta",
+            "price": 14.95,
+            "image_url": "https://www.nypizzawoodstock.com/wp-content/uploads/2023/07/eGGPLANT-PARMIGIANA-600x400.jpg",
+            "is_available": True
+        },
+        {
+            "id": str(uuid.uuid4()),
+            "name": "Eggplant Rollantini Pasta",
+            "description": "Eggplant rolled with ricotta and herbs",
+            "category": "pasta",
+            "price": 14.95,
+            "image_url": "https://www.nypizzawoodstock.com/wp-content/uploads/2023/07/Eggplant-Rollatini.jpg",
+            "is_available": True
+        },
+        {
+            "id": str(uuid.uuid4()),
+            "name": "Stuffed Shells",
+            "description": "Large shells stuffed with ricotta cheese",
+            "category": "pasta",
+            "price": 14.95,
+            "image_url": "https://www.nypizzawoodstock.com/wp-content/uploads/2023/07/stuffed-shells-1.jpg",
+            "is_available": True
+        },
+        {
+            "id": str(uuid.uuid4()),
+            "name": "Ravioli (Cheese, Meat, or Spinach)",
+            "description": "Homemade ravioli with your choice of filling",
+            "category": "pasta",
+            "price": 12.95,
+            "image_url": "https://www.nypizzawoodstock.com/wp-content/uploads/2023/07/ravioli-with-garlic-red-pepper-olive-oil-sauce-Barbara-Bakes.jpg",
+            "is_available": True
+        },
+        {
+            "id": str(uuid.uuid4()),
+            "name": "Manicotti",
+            "description": "Pasta tubes stuffed with ricotta cheese",
+            "category": "pasta",
+            "price": 12.95,
+            "image_url": "https://www.nypizzawoodstock.com/wp-content/uploads/2023/07/manicotti-2-600x401.jpg",
+            "is_available": True
+        },
+        {
+            "id": str(uuid.uuid4()),
+            "name": "Penne Alla Vodka",
+            "description": "Penne pasta in creamy vodka sauce",
+            "category": "pasta",
+            "price": 14.95,
+            "image_url": "https://www.nypizzawoodstock.com/wp-content/uploads/2023/07/penne-alla-vodka-10-e1654656600244.jpg",
+            "is_available": True
+        },
+        {
+            "id": str(uuid.uuid4()),
+            "name": "Fettuccine Alfredo",
+            "description": "Classic fettuccine in creamy Alfredo sauce",
+            "category": "pasta",
+            "price": 14.95,
+            "image_url": "https://www.nypizzawoodstock.com/wp-content/uploads/2023/07/fettucine-alfredo-scaled-1-600x900.jpg",
+            "is_available": True
+        },
+        {
+            "id": str(uuid.uuid4()),
+            "name": "Fettuccine Alfredo w/Chicken",
+            "description": "Fettuccine Alfredo with grilled chicken",
+            "category": "pasta",
+            "price": 18.95,
+            "image_url": "https://www.nypizzawoodstock.com/wp-content/uploads/2023/07/shrimp-alfredo-IG-600x600.jpg",
+            "is_available": True
+        },
+        {
+            "id": str(uuid.uuid4()),
+            "name": "Fettuccine Alfredo w/Shrimp",
+            "description": "Fettuccine Alfredo with grilled shrimp",
+            "category": "pasta",
+            "price": 18.95,
+            "image_url": "https://www.nypizzawoodstock.com/wp-content/uploads/2023/07/shrimp-alfredo-IG-600x600.jpg",
+            "is_available": True
+        },
+        {
+            "id": str(uuid.uuid4()),
+            "name": "Chicken Francese",
+            "description": "Chicken in white wine and lemon sauce",
+            "category": "pasta",
+            "price": 17.95,
+            "image_url": "https://www.nypizzawoodstock.com/wp-content/uploads/2023/07/chicken-francese-recipe-1-600x900.jpg",
+            "is_available": True
+        },
+        {
+            "id": str(uuid.uuid4()),
+            "name": "Chicken Marsala",
+            "description": "Chicken in Marsala wine sauce with mushrooms",
+            "category": "pasta",
+            "price": 18.95,
+            "image_url": "https://www.nypizzawoodstock.com/wp-content/uploads/2023/07/Marsala.jpg",
+            "is_available": True
+        },
+        {
+            "id": str(uuid.uuid4()),
+            "name": "Shrimp Scampi",
+            "description": "Shrimp in garlic and white wine sauce",
+            "category": "pasta",
+            "price": 19.95,
+            "image_url": "https://www.nypizzawoodstock.com/wp-content/uploads/2023/07/easy-shrimp-scampi-featured.jpg",
+            "is_available": True
+        },
+        
+        # CALZONES
         {
             "id": str(uuid.uuid4()),
             "name": "Cheese Calzone",
@@ -485,6 +807,62 @@ async def initialize_sample_data():
             "category": "calzone",
             "price": 12.75,
             "image_url": "https://www.nypizzawoodstock.com/wp-content/uploads/2023/07/Calzone-scaled-1.jpg",
+            "is_available": True
+        },
+        {
+            "id": str(uuid.uuid4()),
+            "name": "Meatball Calzone",
+            "description": "Calzone with meatballs, ricotta and mozzarella",
+            "category": "calzone",
+            "price": 12.75,
+            "image_url": "https://www.nypizzawoodstock.com/wp-content/uploads/2023/07/Calzone-scaled-1.jpg",
+            "is_available": True
+        },
+        {
+            "id": str(uuid.uuid4()),
+            "name": "Ham Calzone",
+            "description": "Calzone with ham, ricotta and mozzarella",
+            "category": "calzone",
+            "price": 12.75,
+            "image_url": "https://www.nypizzawoodstock.com/wp-content/uploads/2023/07/Calzone-scaled-1.jpg",
+            "is_available": True
+        },
+        {
+            "id": str(uuid.uuid4()),
+            "name": "Spinach Calzone",
+            "description": "Calzone with spinach, ricotta and mozzarella",
+            "category": "calzone",
+            "price": 12.75,
+            "image_url": "https://www.nypizzawoodstock.com/wp-content/uploads/2023/07/Calzone-scaled-1.jpg",
+            "is_available": True
+        },
+        {
+            "id": str(uuid.uuid4()),
+            "name": "Create Your Own Calzone",
+            "description": "Build your own calzone with your favorite toppings",
+            "category": "calzone",
+            "price": 12.75,
+            "image_url": "https://www.nypizzawoodstock.com/wp-content/uploads/2023/07/Calzone-scaled-1.jpg",
+            "is_available": True
+        },
+        
+        # STROMBOLI
+        {
+            "id": str(uuid.uuid4()),
+            "name": "Cheese Steak Stromboli",
+            "description": "Rolled pizza dough with steak and cheese",
+            "category": "stromboli",
+            "price": 12.75,
+            "image_url": "https://www.nypizzawoodstock.com/wp-content/uploads/2023/07/Stromboli-2-scaled-1-600x338.jpg",
+            "is_available": True
+        },
+        {
+            "id": str(uuid.uuid4()),
+            "name": "Italian Meatball Stromboli",
+            "description": "Rolled pizza dough with meatballs and cheese",
+            "category": "stromboli",
+            "price": 12.75,
+            "image_url": "https://www.nypizzawoodstock.com/wp-content/uploads/2023/07/Stromboli-2-scaled-1-600x338.jpg",
             "is_available": True
         }
     ]
@@ -507,7 +885,7 @@ async def initialize_sample_data():
     
     await db.users.insert_one(admin_user)
     
-    logger.info("Sample data initialized successfully!")
+    logger.info("Complete NY Pizza Woodstock menu initialized successfully!")
 
 if __name__ == "__main__":
     import uvicorn
