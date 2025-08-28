@@ -392,18 +392,18 @@ async def initialize_sample_data():
             "description": "Classic New York style pizza with mozzarella cheese",
             "category": "classic",
             "image_url": "https://www.nypizzawoodstock.com/wp-content/uploads/2023/07/Cheese-Pizza-1-600x400.jpg",
-            "sizes": {"Small": 12.99, "Medium": 15.99, "XL": 18.99},
+            "sizes": {"Medium": 13.95, "Large": 15.95, "Xlarge": 17.95},
             "toppings": [],
             "is_available": True
         },
         {
             "id": str(uuid.uuid4()),
             "name": "Buffalo Chicken Pizza",
-            "description": "Spicy buffalo chicken with ranch dressing and mozzarella",
+            "description": "Chicken, buffalo sauce & cheddar cheese",
             "category": "specialty",
             "image_url": "https://www.nypizzawoodstock.com/wp-content/uploads/2019/11/Buffalo_Pizza-scaled-2-600x338.jpg",
-            "sizes": {"Small": 16.99, "Medium": 19.99, "XL": 23.99},
-            "toppings": ["Buffalo Chicken", "Ranch", "Mozzarella"],
+            "sizes": {"Medium": 18.95, "Large": 20.95, "Xlarge": 22.95},
+            "toppings": ["Buffalo Chicken", "Buffalo Sauce", "Cheddar Cheese"],
             "is_available": True
         },
         {
@@ -412,7 +412,7 @@ async def initialize_sample_data():
             "description": "Philly steak with cheese and peppers",
             "category": "specialty",
             "image_url": "https://www.nypizzawoodstock.com/wp-content/uploads/2019/11/Steak_and_Cheese-scaled-1-600x338.jpg",
-            "sizes": {"Small": 17.99, "Medium": 20.99, "XL": 24.99},
+            "sizes": {"Medium": 18.95, "Large": 20.95, "Xlarge": 22.95},
             "toppings": ["Philly Steak", "Cheese", "Peppers"],
             "is_available": True
         },
@@ -422,7 +422,7 @@ async def initialize_sample_data():
             "description": "Loaded with pepperoni, sausage, peppers, mushrooms and onions",
             "category": "specialty",
             "image_url": "https://www.nypizzawoodstock.com/wp-content/uploads/2023/07/Deluxe_Pizza-scaled-1-600x338.jpg",
-            "sizes": {"Small": 18.99, "Medium": 22.99, "XL": 26.99},
+            "sizes": {"Medium": 19.95, "Large": 21.95, "Xlarge": 23.95},
             "toppings": ["Pepperoni", "Sausage", "Peppers", "Mushrooms", "Onions"],
             "is_available": True
         },
@@ -432,7 +432,7 @@ async def initialize_sample_data():
             "description": "Ham and pineapple with mozzarella cheese",
             "category": "specialty",
             "image_url": "https://www.nypizzawoodstock.com/wp-content/uploads/2023/07/Hawaiian_Pizza-scaled-1-600x338.jpg",
-            "sizes": {"Small": 16.99, "Medium": 19.99, "XL": 23.99},
+            "sizes": {"Medium": 17.95, "Large": 19.95, "Xlarge": 21.95},
             "toppings": ["Ham", "Pineapple", "Mozzarella"],
             "is_available": True
         },
@@ -442,18 +442,18 @@ async def initialize_sample_data():
             "description": "Grilled chicken with BBQ sauce and red onions",
             "category": "specialty",
             "image_url": "https://www.nypizzawoodstock.com/wp-content/uploads/2023/07/BBQ_Pizza-scaled-1-600x338.jpg",
-            "sizes": {"Small": 17.99, "Medium": 20.99, "XL": 24.99},
+            "sizes": {"Medium": 18.95, "Large": 20.95, "Xlarge": 22.95},
             "toppings": ["BBQ Chicken", "BBQ Sauce", "Red Onions"],
             "is_available": True
         },
         {
             "id": str(uuid.uuid4()),
             "name": "Meat Lovers Pizza",
-            "description": "Pepperoni, sausage, ham, and meatballs",
+            "description": "Pepperoni, ham & bacon",
             "category": "specialty",
             "image_url": "https://www.nypizzawoodstock.com/wp-content/uploads/2023/07/Meat_Lovers-scaled-2-600x338.jpg",
-            "sizes": {"Small": 19.99, "Medium": 23.99, "XL": 27.99},
-            "toppings": ["Pepperoni", "Sausage", "Ham", "Meatballs"],
+            "sizes": {"Medium": 20.95, "Large": 22.95, "Xlarge": 24.95},
+            "toppings": ["Pepperoni", "Ham", "Bacon"],
             "is_available": True
         }
     ]
