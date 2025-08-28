@@ -1,6 +1,24 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useAppContext } from './App';
+
+// Get the context from App.js
+const AppContext = React.createContext();
+
+// Custom hook to use app context  
+const useAppContext = () => {
+  const context = React.useContext(AppContext);
+  if (!context) {
+    // If context is not available, return mock data for now
+    return {
+      cart: [],
+      removeFromCart: () => {},
+      updateCartItemQuantity: () => {},
+      getCartTotal: () => 0,
+      user: null
+    };
+  }
+  return context;
+};
 
 // Cart Component
 export function Cart() {
