@@ -1044,6 +1044,26 @@ async def initialize_sample_data():
             "price": 15.95,
             "image_url": "https://www.nypizzawoodstock.com/wp-content/uploads/2023/07/Burger_and_Fries-1-2048x1152-1-300x300.jpg",
             "is_available": True
+        },
+        
+        # STROMBOLI (2 items)
+        {
+            "id": str(uuid.uuid4()),
+            "name": "Cheese Steak Stromboli",
+            "description": "Rolled pizza dough with steak and cheese",
+            "category": "stromboli",
+            "price": 12.75,
+            "image_url": "https://www.nypizzawoodstock.com/wp-content/uploads/2023/07/Stromboli-2-scaled-1-600x338.jpg",
+            "is_available": True
+        },
+        {
+            "id": str(uuid.uuid4()),
+            "name": "Italian Meatball Stromboli",
+            "description": "Rolled pizza dough with meatballs and cheese",
+            "category": "stromboli",
+            "price": 12.75,
+            "image_url": "https://www.nypizzawoodstock.com/wp-content/uploads/2023/07/Stromboli-2-scaled-1-600x338.jpg",
+            "is_available": True
         }
     ]
     
