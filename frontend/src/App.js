@@ -679,6 +679,16 @@ function Menu() {
             >
               🍔 Burgers
             </button>
+            <button
+              onClick={() => setActiveCategory('wings')}
+              className={`whitespace-nowrap px-4 py-2 rounded-full transition ${
+                activeCategory === 'wings'
+                  ? 'bg-red-600 text-white'
+                  : 'text-gray-600 hover:text-red-600'
+              }`}
+            >
+              🍗 Wings
+            </button>
           </div>
         </div>
       </div>
