@@ -734,6 +734,13 @@ function Menu() {
           />
         )}
         
+        {activeCategory === 'burgers' && (
+          <MenuSection 
+            items={menuItems.filter(item => item.category === 'burgers')} 
+            title="Delicious Burgers"
+          />
+        )}
+        
         {activeCategory === 'wings' && (
           <MenuSection 
             items={menuItems.filter(item => item.category === 'wings')} 
