@@ -769,6 +769,17 @@ function Menu() {
           <PizzaSection pizzas={pizzas} onPizzaSelect={handlePizzaSelect} />
         )}
         
+        {activeCategory === 'specialty' && (
+          <PizzaSection pizzas={pizzas.filter(pizza => pizza.category === 'specialty')} onPizzaSelect={handlePizzaSelect} />
+        )}
+        
+        {activeCategory === 'slice' && (
+          <MenuSection 
+            items={menuItems.filter(item => item.category === 'slice')} 
+            title="Pizza by the Slice"
+          />
+        )}
+        
         {activeCategory === 'pasta' && (
           <MenuSection 
             items={menuItems.filter(item => item.category === 'pasta')} 
@@ -804,10 +815,45 @@ function Menu() {
           />
         )}
         
-        {activeCategory === 'burgers' && (
+        {activeCategory === 'hot_subs' && (
           <MenuSection 
-            items={menuItems.filter(item => item.category === 'burgers')} 
-            title="Delicious Burgers"
+            items={menuItems.filter(item => item.category === 'hot_subs')} 
+            title="Hot Sub Sandwiches"
+          />
+        )}
+        
+        {activeCategory === 'cold_subs' && (
+          <MenuSection 
+            items={menuItems.filter(item => item.category === 'cold_subs')} 
+            title="Cold Sub Sandwiches"
+          />
+        )}
+        
+        {activeCategory === 'gyros' && (
+          <MenuSection 
+            items={menuItems.filter(item => item.category === 'gyros')} 
+            title="Greek Gyros"
+          />
+        )}
+        
+        {activeCategory === 'sides' && (
+          <MenuSection 
+            items={menuItems.filter(item => item.category === 'sides')} 
+            title="Sides"
+          />
+        )}
+        
+        {activeCategory === 'beverages' && (
+          <MenuSection 
+            items={menuItems.filter(item => item.category === 'beverages')} 
+            title="Beverages"
+          />
+        )}
+        
+        {activeCategory === 'desserts' && (
+          <MenuSection 
+            items={menuItems.filter(item => item.category === 'desserts')} 
+            title="Desserts"
           />
         )}
         
