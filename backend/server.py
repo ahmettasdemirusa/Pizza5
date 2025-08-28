@@ -288,6 +288,10 @@ async def create_order(order_data: Order, current_user: User = Depends(get_curre
 @api_router.get("/orders/my-orders")
 async def get_user_orders(current_user: User = Depends(get_current_user)):
     orders = await db.orders.find({"user_id": current_user.id}).sort("created_at", -1).to_list(50)
+    # Convert ObjectId to string for JSON serialization
+    for order in orders:
+        if '_id' in order:
+            del order['_id']
     return orders
 
 @api_router.get("/orders/{order_id}")
