@@ -845,24 +845,204 @@ async def initialize_sample_data():
             "image_url": "https://www.nypizzawoodstock.com/wp-content/uploads/2023/07/Calzone-scaled-1.jpg",
             "is_available": True
         },
-        
-        # STROMBOLI
+        # APPETIZERS (8 items)
         {
             "id": str(uuid.uuid4()),
-            "name": "Cheese Steak Stromboli",
-            "description": "Rolled pizza dough with steak and cheese",
-            "category": "stromboli",
-            "price": 12.75,
-            "image_url": "https://www.nypizzawoodstock.com/wp-content/uploads/2023/07/Stromboli-2-scaled-1-600x338.jpg",
+            "name": "Bread Sticks",
+            "description": "Fresh baked bread sticks with marinara sauce",
+            "category": "appetizers",
+            "price": 9.95,
+            "image_url": "https://www.nypizzawoodstock.com/wp-content/uploads/2023/07/Bread-Sticks-600x400-1-300x300.jpg",
             "is_available": True
         },
         {
             "id": str(uuid.uuid4()),
-            "name": "Italian Meatball Stromboli",
-            "description": "Rolled pizza dough with meatballs and cheese",
-            "category": "stromboli",
-            "price": 12.75,
-            "image_url": "https://www.nypizzawoodstock.com/wp-content/uploads/2023/07/Stromboli-2-scaled-1-600x338.jpg",
+            "name": "Chicken Strips",
+            "description": "Crispy chicken strips with fries",
+            "category": "appetizers",
+            "price": 9.95,
+            "image_url": "https://www.nypizzawoodstock.com/wp-content/uploads/2023/07/Chicken_Tenders_and_Fries-2048x1152-1-300x300.jpg",
+            "is_available": True
+        },
+        {
+            "id": str(uuid.uuid4()),
+            "name": "Fried Pickles",
+            "description": "Golden fried pickle spears with ranch",
+            "category": "appetizers",
+            "price": 7.50,
+            "image_url": "https://www.nypizzawoodstock.com/wp-content/uploads/2023/07/Mozzarella_Sticks-1-2048x1152-1-300x300.jpg",
+            "is_available": True
+        },
+        {
+            "id": str(uuid.uuid4()),
+            "name": "Fried Ravioli",
+            "description": "Crispy fried cheese ravioli with marinara",
+            "category": "appetizers",
+            "price": 7.50,
+            "image_url": "https://www.nypizzawoodstock.com/wp-content/uploads/2023/07/Cheese_Ravioli-scaled-1-300x300.jpg",
+            "is_available": True
+        },
+        {
+            "id": str(uuid.uuid4()),
+            "name": "I ❤️ NY Fries",
+            "description": "Our special seasoned fries",
+            "category": "appetizers",
+            "price": 7.95,
+            "image_url": "https://www.nypizzawoodstock.com/wp-content/uploads/2023/07/Ilovenyfries-600x400-1-300x300.jpg",
+            "is_available": True
+        },
+        {
+            "id": str(uuid.uuid4()),
+            "name": "Jalapeno Poppers",
+            "description": "Cream cheese stuffed jalapenos",
+            "category": "appetizers",
+            "price": 7.50,
+            "image_url": "https://www.nypizzawoodstock.com/wp-content/uploads/2023/07/Jalapeno_Poppers-1-scaled-1-300x300.jpg",
+            "is_available": True
+        },
+        {
+            "id": str(uuid.uuid4()),
+            "name": "Mozzarella Sticks",
+            "description": "Golden fried mozzarella with marinara",
+            "category": "appetizers",
+            "price": 7.50,
+            "image_url": "https://www.nypizzawoodstock.com/wp-content/uploads/2023/07/Mozzarella_Sticks-1-2048x1152-1-300x300.jpg",
+            "is_available": True
+        },
+        {
+            "id": str(uuid.uuid4()),
+            "name": "Zuke Shoots",
+            "description": "Crispy fried zucchini sticks",
+            "category": "appetizers",
+            "price": 7.50,
+            "image_url": "https://www.nypizzawoodstock.com/wp-content/uploads/2023/07/Zucchini_Sticks-1-scaled-1-300x300.jpg",
+            "is_available": True
+        },
+        
+        # WINGS (4 flavors with multiple sizes)
+        {
+            "id": str(uuid.uuid4()),
+            "name": "BBQ Wings",
+            "description": "With ranch or blue cheese",
+            "category": "wings",
+            "price": 8.95,  # 6pc price (multiple sizes available)
+            "sizes": {"6pc": 8.95, "12pc": 15.95, "20pc": 26.95, "50pc": 59.95},
+            "image_url": "https://www.nypizzawoodstock.com/wp-content/uploads/2023/07/BBQ_Wings-scaled-1-300x300.jpg",
+            "is_available": True
+        },
+        {
+            "id": str(uuid.uuid4()),
+            "name": "Buffalo Wings (Medium, Mild or Hot)",
+            "description": "Classic buffalo wings with ranch or blue cheese",
+            "category": "wings",
+            "price": 8.95,
+            "sizes": {"6pc": 8.95, "12pc": 15.95, "20pc": 26.95, "50pc": 59.95},
+            "image_url": "https://www.nypizzawoodstock.com/wp-content/uploads/2023/07/Medium_Wings-scaled-2-300x300.jpg",
+            "is_available": True
+        },
+        {
+            "id": str(uuid.uuid4()),
+            "name": "Lemon Pepper Wings",
+            "description": "Seasoned with lemon pepper spice",
+            "category": "wings",
+            "price": 8.95,
+            "sizes": {"6pc": 8.95, "12pc": 15.95, "20pc": 26.95, "50pc": 59.95},
+            "image_url": "https://www.nypizzawoodstock.com/wp-content/uploads/2023/07/Sweet_Chilli_Wings-scaled-1-300x300.jpg",
+            "is_available": True
+        },
+        {
+            "id": str(uuid.uuid4()),
+            "name": "Sweet Chili Wings",
+            "description": "Sweet and spicy chili glaze",
+            "category": "wings",
+            "price": 8.95,
+            "sizes": {"6pc": 8.95, "12pc": 15.95, "20pc": 26.95, "50pc": 59.95},
+            "image_url": "https://www.nypizzawoodstock.com/wp-content/uploads/2023/07/Sweet_Chilli_Wings-scaled-1-300x300.jpg",
+            "is_available": True
+        },
+        
+        # SALADS (6 items)
+        {
+            "id": str(uuid.uuid4()),
+            "name": "Antipasto Salad",
+            "description": "Mixed greens with Italian meats and cheese",
+            "category": "salads",
+            "price": 12.95,
+            "image_url": "https://www.nypizzawoodstock.com/wp-content/uploads/2023/07/Antipasto_Salad-2-2048x1152-1-300x300.jpg",
+            "is_available": True
+        },
+        {
+            "id": str(uuid.uuid4()),
+            "name": "Chef Salad",
+            "description": "Mixed greens with turkey, ham and cheese",
+            "category": "salads",
+            "price": 12.95,
+            "image_url": "https://www.nypizzawoodstock.com/wp-content/uploads/2023/07/Antipasto_Salad-2-2048x1152-1-300x300.jpg",
+            "is_available": True
+        },
+        {
+            "id": str(uuid.uuid4()),
+            "name": "Garden Salad",
+            "description": "Fresh mixed greens with vegetables",
+            "category": "salads",
+            "price": 9.95,
+            "image_url": "https://www.nypizzawoodstock.com/wp-content/uploads/2023/07/Garden_Salad-2048x1152-1-300x300.jpg",
+            "is_available": True
+        },
+        {
+            "id": str(uuid.uuid4()),
+            "name": "Greek Salad",
+            "description": "Mixed greens with feta, olives and Greek dressing",
+            "category": "salads",
+            "price": 11.95,
+            "image_url": "https://www.nypizzawoodstock.com/wp-content/uploads/2023/07/Greek_Salad-1-2048x1152-1-300x300.jpg",
+            "is_available": True
+        },
+        {
+            "id": str(uuid.uuid4()),
+            "name": "Grilled Chicken Salad",
+            "description": "Mixed greens topped with grilled chicken",
+            "category": "salads",
+            "price": 13.95,
+            "image_url": "https://www.nypizzawoodstock.com/wp-content/uploads/2023/07/Chicken_Salad-2048x1152-1-300x300.jpg",
+            "is_available": True
+        },
+        {
+            "id": str(uuid.uuid4()),
+            "name": "Gyro Salad",
+            "description": "Mixed greens with gyro meat and tzatziki",
+            "category": "salads",
+            "price": 14.95,
+            "image_url": "https://www.nypizzawoodstock.com/wp-content/uploads/2023/07/GyrosGreekSalad-600x400-1-300x300.jpg",
+            "is_available": True
+        },
+        
+        # BURGERS (3 items)
+        {
+            "id": str(uuid.uuid4()),
+            "name": "Hamburger",
+            "description": "Classic beef burger with lettuce and tomato",
+            "category": "burgers",
+            "price": 11.95,
+            "image_url": "https://www.nypizzawoodstock.com/wp-content/uploads/2023/07/Burger_and_Fries-1-2048x1152-1-300x300.jpg",
+            "is_available": True
+        },
+        {
+            "id": str(uuid.uuid4()),
+            "name": "Cheeseburger",
+            "description": "Beef burger with cheese, lettuce and tomato",
+            "category": "burgers",
+            "price": 12.95,
+            "image_url": "https://www.nypizzawoodstock.com/wp-content/uploads/2023/07/Burger_and_Fries-1-2048x1152-1-300x300.jpg",
+            "is_available": True
+        },
+        {
+            "id": str(uuid.uuid4()),
+            "name": "Double Burger",
+            "description": "Double beef patty with cheese and fixings",
+            "category": "burgers",
+            "price": 15.95,
+            "image_url": "https://www.nypizzawoodstock.com/wp-content/uploads/2023/07/Burger_and_Fries-1-2048x1152-1-300x300.jpg",
             "is_available": True
         }
     ]
