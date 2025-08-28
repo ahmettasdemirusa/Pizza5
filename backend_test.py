@@ -258,8 +258,9 @@ class NYPizzaAPITester:
             print("   ⚠️  Skipping order test - no token available")
             return False
             
-        # Create a sample order
+        # Create a sample order - user_id will be set by backend from token
         order_data = {
+            "user_id": "placeholder",  # This will be overridden by backend
             "items": [
                 {
                     "item_id": "test-pizza-id",
