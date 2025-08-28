@@ -670,14 +670,14 @@ function Menu() {
               🥙 Salads
             </button>
             <button
-              onClick={() => setActiveCategory('wings')}
+              onClick={() => setActiveCategory('burgers')}
               className={`whitespace-nowrap px-4 py-2 rounded-full transition ${
-                activeCategory === 'wings'
+                activeCategory === 'burgers'
                   ? 'bg-red-600 text-white'
                   : 'text-gray-600 hover:text-red-600'
               }`}
             >
-              🍗 Wings
+              🍔 Burgers
             </button>
           </div>
         </div>
