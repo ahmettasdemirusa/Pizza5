@@ -268,6 +268,10 @@ function Header() {
               </Link>
               {user ? (
                 <>
+                  <Link to="/orders" className="py-2 hover:text-red-200 transition">Orders</Link>
+                  {user.is_admin && (
+                    <Link to="/admin" className="py-2 hover:text-red-200 transition">Admin</Link>
+                  )}
                   <span className="py-2 text-sm">Hello, {user.first_name}</span>
                   <button 
                     onClick={logout}
