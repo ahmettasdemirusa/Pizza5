@@ -870,13 +870,14 @@ function PizzaCard({ pizza, onClick }) {
 function MenuSection({ items, title }) {
   const { addToCart } = useAppContext();
 
-  const handleAddToCart = (item) => {
+  const handleAddToCart = (item, selectedSize = null) => {
     const cartItem = {
       item_id: item.id,
       item_type: 'menu_item',
       name: item.name,
+      size: selectedSize,
       quantity: 1,
-      price: item.price,
+      price: selectedSize && item.sizes ? item.sizes[selectedSize] : item.price,
       toppings: []
     };
     addToCart(cartItem);
@@ -887,33 +888,85 @@ function MenuSection({ items, title }) {
       <h2 className="text-3xl font-bold mb-6 text-gray-800">{title}</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {items.map(item => (
-          <div key={item.id} className="bg-white rounded-lg shadow-md overflow-hidden">
-            <div className="aspect-w-16 aspect-h-9 bg-gray-200">
-              <img 
-                src={item.image_url} 
-                alt={item.name}
-                className="w-full h-48 object-cover"
-              />
-            </div>
-            <div className="p-4">
-              <h3 className="text-lg font-semibold mb-2">{item.name}</h3>
-              <p className="text-gray-600 text-sm mb-3">{item.description}</p>
-              <div className="flex justify-between items-center">
-                <span className="text-lg font-bold text-red-600">
-                  ${item.price.toFixed(2)}
-                </span>
-                <button 
-                  onClick={() => handleAddToCart(item)}
-                  className="bg-red-600 text-white px-4 py-2 rounded-md hover:bg-red-700 transition text-sm"
-                >
-                  Add to Cart
-                </button>
-              </div>
-            </div>
-          </div>
+          <MenuItemCard
+            key={item.id}
+            item={item}
+            onAddToCart={handleAddToCart}
+          />
         ))}
       </div>
     </section>
+  );
+}
+
+// Menu Item Card Component
+function MenuItemCard({ item, onAddToCart }) {
+  const [selectedSize, setSelectedSize] = useState(null);
+  
+  // For wings with multiple sizes
+  const hasMultipleSizes = item.sizes && Object.keys(item.sizes).length > 1;
+  
+  // Set default size for wings
+  React.useEffect(() => {
+    if (hasMultipleSizes && !selectedSize) {
+      setSelectedSize(Object.keys(item.sizes)[0]);
+    }
+  }, [item, hasMultipleSizes, selectedSize]);
+
+  const currentPrice = hasMultipleSizes && selectedSize ? item.sizes[selectedSize] : item.price;
+
+  return (
+    <div className="bg-white rounded-lg shadow-md overflow-hidden">
+      <div className="aspect-w-16 aspect-h-9 bg-gray-200">
+        <img 
+          src={item.image_url} 
+          alt={item.name}
+          className="w-full h-48 object-cover"
+          onError={(e) => {
+            e.target.src = 'https://via.placeholder.com/400x200/dc2626/white?text=Food';
+          }}
+        />
+      </div>
+      <div className="p-4">
+        <h3 className="text-lg font-semibold mb-2">{item.name}</h3>
+        <p className="text-gray-600 text-sm mb-3">{item.description}</p>
+        
+        {/* Size selection for wings */}
+        {hasMultipleSizes && (
+          <div className="mb-3">
+            <label className="text-sm font-medium text-gray-700 mb-2 block">Size:</label>
+            <div className="grid grid-cols-2 gap-2">
+              {Object.entries(item.sizes).map(([size, price]) => (
+                <button
+                  key={size}
+                  onClick={() => setSelectedSize(size)}
+                  className={`p-2 border rounded text-center text-sm transition ${
+                    selectedSize === size
+                      ? 'border-red-600 bg-red-50 text-red-600'
+                      : 'border-gray-300 hover:border-red-300'
+                  }`}
+                >
+                  <div className="font-medium">{size}</div>
+                  <div className="text-xs">${price.toFixed(2)}</div>
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
+        
+        <div className="flex justify-between items-center">
+          <span className="text-lg font-bold text-red-600">
+            ${currentPrice.toFixed(2)}
+          </span>
+          <button 
+            onClick={() => onAddToCart(item, selectedSize)}
+            className="bg-red-600 text-white px-4 py-2 rounded-md hover:bg-red-700 transition text-sm"
+          >
+            Add to Cart
+          </button>
+        </div>
+      </div>
+    </div>
   );
 }
 
