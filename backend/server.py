@@ -154,46 +154,39 @@ async def get_current_user(credentials: HTTPAuthorizationCredentials = Depends(s
 def calculate_delivery_fee(delivery_address: str) -> tuple:
     """Calculate delivery fee based on distance from business"""
     # Business location: 10214 Hickory Flat Hwy, Woodstock, GA 30188
-    # Pricing: 5 miles = $4.00, then +$2.00 per additional mile
+    # Pricing: 0-5 miles = $4.00 flat, 5+ miles = $4.00 + $2.00 per extra mile
     # Maximum delivery area: 9 miles
     
-    # For demo purposes, we'll use ZIP code based distance estimation
-    # In production, use Google Maps Distance Matrix API
-    
-    # Extract ZIP code from address for basic distance estimation
+    # Extract ZIP code for distance estimation
     import re
     zip_match = re.search(r'\b\d{5}\b', delivery_address)
     delivery_zip = zip_match.group() if zip_match else "30188"
     
-    # Basic ZIP code distance estimation (replace with proper geocoding in production)
-    business_zip = "30188"  # Woodstock, GA
-    
-    # Distance estimation based on ZIP proximity (simplified for demo)
+    # Distance estimation based on ZIP proximity (replace with Google Maps API in production)
     zip_distances = {
-        "30188": 0,    # Woodstock (business location)
+        "30188": 1,    # Woodstock (business location)
         "30189": 2,    # Woodstock area
         "30144": 4,    # Kennesaw
         "30102": 6,    # Acworth  
-        "30064": 8,    # Marietta
-        "30075": 9,    # Roswell
+        "30064": 7,    # Marietta
+        "30075": 8,    # Roswell
         "30114": 3,    # Canton area
         "30115": 5,    # Canton
-        "30101": 7,    # Acworth extended
-        "30060": 8.5,  # Marietta extended
+        "30101": 6.5,  # Acworth extended
+        "30060": 8,    # Marietta extended
     }
     
-    # Default distance for unknown ZIP codes (estimate based on GA area)
-    distance = zip_distances.get(delivery_zip, 6.0)
+    distance = zip_distances.get(delivery_zip, 5.5)  # Default to middle range
     
     # Check if within delivery area (max 9 miles)
     if distance > 9:
         return 0, False, distance  # Outside delivery area
     
-    # Calculate delivery fee
+    # Calculate delivery fee - CORRECT FORMULA
     if distance <= 5:
-        delivery_fee = 4.00
+        delivery_fee = 4.00  # Flat $4.00 for 0-5 miles
     else:
-        # $4 base + $2 per mile over 5 miles
+        # $4.00 base + $2.00 per mile OVER 5 miles
         extra_miles = distance - 5
         delivery_fee = 4.00 + (extra_miles * 2.00)
     
