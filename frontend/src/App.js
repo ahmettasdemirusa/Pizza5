@@ -215,6 +215,10 @@ function Header() {
             </Link>
             {user ? (
               <div className="flex items-center space-x-4">
+                <Link to="/orders" className="hover:text-red-200 transition">Orders</Link>
+                {user.is_admin && (
+                  <Link to="/admin" className="hover:text-red-200 transition">Admin</Link>
+                )}
                 <span className="text-sm">Hello, {user.first_name}</span>
                 <button 
                   onClick={logout}
