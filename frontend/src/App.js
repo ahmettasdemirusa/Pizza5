@@ -988,16 +988,6 @@ function AppContent() {
   );
 }
 
-// Cart Component (placeholder for now)
-function Cart() {
-  return (
-    <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-8">Shopping Cart</h1>
-      <p>Cart component will be implemented next...</p>
-    </div>
-  );
-}
-
 // Checkout Component (placeholder for now)
 function Checkout() {
   return (
