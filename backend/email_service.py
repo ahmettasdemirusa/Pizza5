@@ -243,7 +243,7 @@ class EmailService:
                 
                 <div class="order-details">
                     <p>Subtotal: ${order_data['subtotal']:.2f}</p>
-                    {f"<p>Delivery Fee: ${order_data.get('delivery_fee', 0):.2f}</p>" if order_data.get('delivery_fee') else ""}
+                    """ + (f"<p>Delivery Fee: ${order_data.get('delivery_fee', 0):.2f}</p>" if order_data.get('delivery_fee') else "") + f"""
                     <p>Tax: ${order_data['tax']:.2f}</p>
                     <p class="total">Total: ${order_data['total']:.2f}</p>
                 </div>
