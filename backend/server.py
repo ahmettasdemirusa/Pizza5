@@ -309,6 +309,10 @@ async def get_all_orders(current_user: User = Depends(get_current_user)):
         raise HTTPException(status_code=403, detail="Admin access required")
     
     orders = await db.orders.find().sort("created_at", -1).to_list(100)
+    # Convert ObjectId to string for JSON serialization
+    for order in orders:
+        if '_id' in order:
+            del order['_id']
     return orders
 
 @api_router.put("/admin/orders/{order_id}/status")
