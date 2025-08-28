@@ -526,37 +526,66 @@ function Menu() {
   const [pizzas, setPizzas] = useState([]);
   const [menuItems, setMenuItems] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState('');
   const [activeCategory, setActiveCategory] = useState('pizzas');
   const [selectedPizza, setSelectedPizza] = useState(null);
   const { addToCart } = useAppContext();
 
   useEffect(() => {
+    console.log('Menu component mounted, fetching data...');
     fetchMenuData();
   }, []);
 
   const fetchMenuData = async () => {
     try {
+      console.log('Fetching menu data from API...');
       const [pizzasResponse, itemsResponse] = await Promise.all([
         fetch(`${API}/menu/pizzas`),
         fetch(`${API}/menu/items`)
       ]);
 
+      console.log('API responses received:', pizzasResponse.status, itemsResponse.status);
+
       const pizzasData = await pizzasResponse.json();
       const itemsData = await itemsResponse.json();
+
+      console.log('Pizzas data:', pizzasData.length, 'items');
+      console.log('Menu items data:', itemsData.length, 'items');
 
       setPizzas(pizzasData);
       setMenuItems(itemsData);
     } catch (error) {
       console.error('Error fetching menu:', error);
+      setError('Failed to load menu. Please refresh the page.');
     }
     setLoading(false);
   };
 
   const handlePizzaSelect = (pizza) => {
+    console.log('Pizza selected:', pizza.name);
     setSelectedPizza(pizza);
   };
 
+  console.log('Menu render - Loading:', loading, 'Pizzas:', pizzas.length, 'Error:', error);
+
   if (loading) return <Loading />;
+
+  if (error) {
+    return (
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+        <div className="text-center">
+          <h2 className="text-2xl font-bold text-red-600 mb-4">Oops! Something went wrong</h2>
+          <p className="text-gray-600 mb-4">{error}</p>
+          <button 
+            onClick={() => window.location.reload()} 
+            className="bg-red-600 text-white px-4 py-2 rounded"
+          >
+            Refresh Page
+          </button>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-gray-50">
