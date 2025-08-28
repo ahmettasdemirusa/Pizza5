@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Routes, Route, Navigate, useNavigate, Link } f
 import './App.css';
 import { Cart as CartPage } from './Cart';
 import { Checkout } from './Checkout';
+import { Orders } from './Orders';
+import { Admin } from './Admin';
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 const API = `${BACKEND_URL}/api`;
