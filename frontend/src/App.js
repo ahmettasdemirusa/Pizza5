@@ -608,10 +608,10 @@ function Menu() {
       {/* Category Navigation */}
       <div className="bg-white shadow-sm sticky top-20 z-40">
         <div className="container mx-auto px-4">
-          <div className="flex space-x-4 overflow-x-auto py-4">
+          <div className="flex space-x-2 overflow-x-auto py-4">
             <button
               onClick={() => setActiveCategory('pizzas')}
-              className={`whitespace-nowrap px-4 py-2 rounded-full transition ${
+              className={`whitespace-nowrap px-3 py-2 rounded-full transition text-sm ${
                 activeCategory === 'pizzas'
                   ? 'bg-red-600 text-white'
                   : 'text-gray-600 hover:text-red-600'
@@ -620,8 +620,28 @@ function Menu() {
               🍕 Pizzas
             </button>
             <button
+              onClick={() => setActiveCategory('specialty')}
+              className={`whitespace-nowrap px-3 py-2 rounded-full transition text-sm ${
+                activeCategory === 'specialty'
+                  ? 'bg-red-600 text-white'
+                  : 'text-gray-600 hover:text-red-600'
+              }`}
+            >
+              ⭐ Specialty
+            </button>
+            <button
+              onClick={() => setActiveCategory('slice')}
+              className={`whitespace-nowrap px-3 py-2 rounded-full transition text-sm ${
+                activeCategory === 'slice'
+                  ? 'bg-red-600 text-white'
+                  : 'text-gray-600 hover:text-red-600'
+              }`}
+            >
+              🍰 Slice
+            </button>
+            <button
               onClick={() => setActiveCategory('pasta')}
-              className={`whitespace-nowrap px-4 py-2 rounded-full transition ${
+              className={`whitespace-nowrap px-3 py-2 rounded-full transition text-sm ${
                 activeCategory === 'pasta'
                   ? 'bg-red-600 text-white'
                   : 'text-gray-600 hover:text-red-600'
@@ -630,8 +650,48 @@ function Menu() {
               🍝 Pasta
             </button>
             <button
+              onClick={() => setActiveCategory('wings')}
+              className={`whitespace-nowrap px-3 py-2 rounded-full transition text-sm ${
+                activeCategory === 'wings'
+                  ? 'bg-red-600 text-white'
+                  : 'text-gray-600 hover:text-red-600'
+              }`}
+            >
+              🍗 Wings
+            </button>
+            <button
+              onClick={() => setActiveCategory('appetizers')}
+              className={`whitespace-nowrap px-3 py-2 rounded-full transition text-sm ${
+                activeCategory === 'appetizers'
+                  ? 'bg-red-600 text-white'
+                  : 'text-gray-600 hover:text-red-600'
+              }`}
+            >
+              🥗 Apps
+            </button>
+            <button
+              onClick={() => setActiveCategory('hot_subs')}
+              className={`whitespace-nowrap px-3 py-2 rounded-full transition text-sm ${
+                activeCategory === 'hot_subs'
+                  ? 'bg-red-600 text-white'
+                  : 'text-gray-600 hover:text-red-600'
+              }`}
+            >
+              🌭 Hot Subs
+            </button>
+            <button
+              onClick={() => setActiveCategory('cold_subs')}
+              className={`whitespace-nowrap px-3 py-2 rounded-full transition text-sm ${
+                activeCategory === 'cold_subs'
+                  ? 'bg-red-600 text-white'
+                  : 'text-gray-600 hover:text-red-600'
+              }`}
+            >
+              🥪 Cold Subs
+            </button>
+            <button
               onClick={() => setActiveCategory('calzone')}
-              className={`whitespace-nowrap px-4 py-2 rounded-full transition ${
+              className={`whitespace-nowrap px-3 py-2 rounded-full transition text-sm ${
                 activeCategory === 'calzone'
                   ? 'bg-red-600 text-white'
                   : 'text-gray-600 hover:text-red-600'
@@ -641,7 +701,7 @@ function Menu() {
             </button>
             <button
               onClick={() => setActiveCategory('stromboli')}
-              className={`whitespace-nowrap px-4 py-2 rounded-full transition ${
+              className={`whitespace-nowrap px-3 py-2 rounded-full transition text-sm ${
                 activeCategory === 'stromboli'
                   ? 'bg-red-600 text-white'
                   : 'text-gray-600 hover:text-red-600'
@@ -650,18 +710,8 @@ function Menu() {
               🌯 Stromboli
             </button>
             <button
-              onClick={() => setActiveCategory('appetizers')}
-              className={`whitespace-nowrap px-4 py-2 rounded-full transition ${
-                activeCategory === 'appetizers'
-                  ? 'bg-red-600 text-white'
-                  : 'text-gray-600 hover:text-red-600'
-              }`}
-            >
-              🥗 Appetizers
-            </button>
-            <button
               onClick={() => setActiveCategory('salads')}
-              className={`whitespace-nowrap px-4 py-2 rounded-full transition ${
+              className={`whitespace-nowrap px-3 py-2 rounded-full transition text-sm ${
                 activeCategory === 'salads'
                   ? 'bg-red-600 text-white'
                   : 'text-gray-600 hover:text-red-600'
@@ -670,24 +720,44 @@ function Menu() {
               🥙 Salads
             </button>
             <button
-              onClick={() => setActiveCategory('burgers')}
-              className={`whitespace-nowrap px-4 py-2 rounded-full transition ${
-                activeCategory === 'burgers'
+              onClick={() => setActiveCategory('gyros')}
+              className={`whitespace-nowrap px-3 py-2 rounded-full transition text-sm ${
+                activeCategory === 'gyros'
                   ? 'bg-red-600 text-white'
                   : 'text-gray-600 hover:text-red-600'
               }`}
             >
-              🍔 Burgers
+              🥙 Gyros
             </button>
             <button
-              onClick={() => setActiveCategory('wings')}
-              className={`whitespace-nowrap px-4 py-2 rounded-full transition ${
-                activeCategory === 'wings'
+              onClick={() => setActiveCategory('sides')}
+              className={`whitespace-nowrap px-3 py-2 rounded-full transition text-sm ${
+                activeCategory === 'sides'
                   ? 'bg-red-600 text-white'
                   : 'text-gray-600 hover:text-red-600'
               }`}
             >
-              🍗 Wings
+              🍟 Sides
+            </button>
+            <button
+              onClick={() => setActiveCategory('beverages')}
+              className={`whitespace-nowrap px-3 py-2 rounded-full transition text-sm ${
+                activeCategory === 'beverages'
+                  ? 'bg-red-600 text-white'
+                  : 'text-gray-600 hover:text-red-600'
+              }`}
+            >
+              🥤 Drinks
+            </button>
+            <button
+              onClick={() => setActiveCategory('desserts')}
+              className={`whitespace-nowrap px-3 py-2 rounded-full transition text-sm ${
+                activeCategory === 'desserts'
+                  ? 'bg-red-600 text-white'
+                  : 'text-gray-600 hover:text-red-600'
+              }`}
+            >
+              🍰 Desserts
             </button>
           </div>
         </div>
