@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-
-// Get the context from App.js
-const AppContext = React.createContext();
+import { AppContext } from './App';
 
 // Custom hook to use app context  
 const useAppContext = () => {
