@@ -231,6 +231,10 @@ async def get_current_user_info(current_user: User = Depends(get_current_user)):
 @api_router.get("/menu/pizzas")
 async def get_pizzas():
     pizzas = await db.pizzas.find({"is_available": True}).to_list(100)
+    # Convert ObjectId to string for JSON serialization
+    for pizza in pizzas:
+        if '_id' in pizza:
+            del pizza['_id']
     return pizzas
 
 @api_router.get("/menu/items")
