@@ -240,6 +240,10 @@ async def get_pizzas():
 @api_router.get("/menu/items")
 async def get_menu_items():
     items = await db.menu_items.find({"is_available": True}).to_list(100)
+    # Convert ObjectId to string for JSON serialization
+    for item in items:
+        if '_id' in item:
+            del item['_id']
     return items
 
 @api_router.get("/menu/categories")
