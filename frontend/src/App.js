@@ -722,25 +722,51 @@ function PizzaCard({ pizza, onClick }) {
 
   return (
     <div 
-      className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow cursor-pointer"
+      className="pizza-card bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 cursor-pointer transform hover:-translate-y-1"
       onClick={onClick}
     >
-      <div className="aspect-w-16 aspect-h-9 bg-gray-200">
+      <div className="pizza-image-container relative bg-gray-200">
         <img 
           src={pizza.image_url} 
           alt={pizza.name}
           className="w-full h-48 object-cover"
+          onError={(e) => {
+            e.target.src = 'https://via.placeholder.com/400x200/dc2626/white?text=Pizza';
+          }}
         />
+        <div className="pizza-image-overlay">
+          Click to Customize
+        </div>
       </div>
       <div className="p-4">
-        <h3 className="text-lg font-semibold mb-2">{pizza.name}</h3>
+        <h3 className="text-lg font-semibold mb-2 text-gray-800">{pizza.name}</h3>
         <p className="text-gray-600 text-sm mb-3 line-clamp-2">{pizza.description}</p>
+        
+        {/* Show toppings if available */}
+        {pizza.toppings && pizza.toppings.length > 0 && (
+          <div className="mb-3">
+            <div className="flex flex-wrap gap-1">
+              {pizza.toppings.slice(0, 3).map((topping, index) => (
+                <span 
+                  key={index}
+                  className="topping-chip text-xs"
+                >
+                  {topping}
+                </span>
+              ))}
+              {pizza.toppings.length > 3 && (
+                <span className="text-xs text-gray-500">+{pizza.toppings.length - 3} more</span>
+              )}
+            </div>
+          </div>
+        )}
+        
         <div className="flex justify-between items-center">
-          <span className="text-lg font-bold text-red-600">
+          <span className="price text-lg font-bold text-red-600">
             From ${basePrice.toFixed(2)}
           </span>
           <button 
-            className="bg-red-600 text-white px-4 py-2 rounded-md hover:bg-red-700 transition text-sm"
+            className="btn-primary px-4 py-2 rounded-md text-sm font-medium"
             onClick={(e) => {
               e.stopPropagation();
               onClick();
