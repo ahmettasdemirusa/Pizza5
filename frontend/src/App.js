@@ -980,7 +980,7 @@ function AppContent() {
         <Route path="/" element={<Menu />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/cart" element={<Cart />} />
+        <Route path="/cart" element={<CartPage />} />
         <Route path="/checkout" element={<Checkout />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
